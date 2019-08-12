@@ -76,6 +76,34 @@ endif
 test_environment:
 	$(PYTHON_INTERPRETER) test_environment.py
 
+## Train model
+train: requirements
+	$(PYTHON_INTERPRETER) src/models/train_model.py ./data/processed/ ./models/
+
+## Build Docker Image
+build_image:
+	./build.sh
+
+## Train Docker Image Locally
+train_image_locally:
+	./local_train.sh
+
+## Deploy Docker Image Locally
+deploy_image_locally:
+	./local_deploy.sh
+
+## Push Image
+push_image:
+	./push.sh $(PROJECT_NAME) $(PROFILE)
+
+## Train model on SageMaker
+train_on_sagemaker: requirements
+	$(PYTHON_INTERPRETER) sagemaker_train.py
+
+## Deploy model on SageMaker (args: model_location)
+deploy_on_sagemaker: requirements
+	$(PYTHON_INTERPRETER) sagemaker_deploy.py $(PROJECT_NAME) $(PROFILE) $(model_location)
+
 #################################################################################
 # PROJECT RULES                                                                 #
 #################################################################################

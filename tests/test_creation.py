@@ -97,6 +97,7 @@ class TestCookieSetup(object):
             'reports',
             'reports/figures',
             'src',
+            'src/container',
             'src/data',
             'src/features',
             'src/models',
