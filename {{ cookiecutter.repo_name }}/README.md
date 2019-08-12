@@ -3,6 +3,11 @@
 
 {{cookiecutter.description}}
 
+TODO
+------------
+
+Implement TODOs in `./src/container/predictor.py` (deploy model as SageMaker Endpoint) and `./src/container/train` (train model on SageMaker)
+
 Project Organization
 ------------
 
@@ -34,6 +39,13 @@ Project Organization
     ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
     ├── src                <- Source code for use in this project.
     │   ├── __init__.py    <- Makes src a Python module
+    │   │
+    │   ├── container      <- SageMaker entrypoints for training and inference
+    │   │   └── nginx.conf
+    │   │   └── predictor.py
+    │   │   └── serve
+    │   │   └── train
+    │   │   └── wsgi.py
     │   │
     │   ├── data           <- Scripts to download or generate data
     │   │   └── make_dataset.py
