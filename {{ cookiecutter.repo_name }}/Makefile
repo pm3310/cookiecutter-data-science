@@ -98,7 +98,7 @@ push_image:
 
 ## Train model on SageMaker
 train_on_sagemaker: requirements
-	$(PYTHON_INTERPRETER) sagemaker_train.py
+	$(PYTHON_INTERPRETER) sagemaker_train.py $(PROJECT_NAME) $(PROFILE)
 
 ## Deploy model on SageMaker (args: model_location)
 deploy_on_sagemaker: requirements
